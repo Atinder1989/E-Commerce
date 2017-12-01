@@ -16,7 +16,6 @@ class ProductDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,15 +32,9 @@ extension ProductDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductDetailCell.identifier, for: indexPath) as! ProductDetailCell
         let variant: Variant = self.product.variantList[indexPath.row]
-        
         cell.colorLabel.text = "Color = \(variant.color)"
         cell.sizeLabel.text =  "Size  = \(variant.size!)"
         cell.priceLabel.text = "Price = \(String(variant.price))"
-
-        
-//        cell.colorLabel.text = variant.color
-//        cell.sizeLabel.text  = "\(variant.size!)"
-//        cell.priceLabel.text = String(variant.price)
         return cell
     }
 }
