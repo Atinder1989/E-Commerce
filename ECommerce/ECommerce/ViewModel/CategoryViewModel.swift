@@ -28,16 +28,10 @@ class CategoryViewModel {
     var responseVo:ProductResponseVO! = nil
     
     func fetchProductsList() {
-        if Utility.sharedInstance.isNetworkAvailable() {
-            
-        Utility.sharedInstance.showLoader()
         var parameter = WebserviceParameter(httpMethod: .GET)
         parameter.url = BASE_URL + "/json"
         let request = RequestManager.sharedInstance.createRequest(parameter: parameter)
         ApiManager.defaultManager.get(request: request) { (data, response, error) in
-            
-            Utility.sharedInstance.hideLoader()
-            
             if error == nil {
                 let decoder = JSONDecoder.init()
                 do
@@ -49,12 +43,8 @@ class CategoryViewModel {
                     print(error)
                 }
             } else {
-                print(error.debugDescription)
+                print(error?.localizedDescription)
             }
-        }
-        }
-        else {
-            Utility.sharedInstance.showAlert(title: "Please Check your Internet Connection", message: "")
         }
     }
     

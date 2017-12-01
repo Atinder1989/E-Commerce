@@ -23,6 +23,7 @@ class RankingProductListViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+ 
 }
 
 // MARK:- UITableview DataSource
@@ -36,7 +37,7 @@ extension RankingProductListViewController: UITableViewDataSource
         let cell  = tableView.dequeueReusableCell(withIdentifier: ProductRankListCell.identifier) as! ProductRankListCell
         cell.selectionStyle = .none
         let productRank: ProductRank = self.productRankList[indexPath.row]
-        cell.countLabel.text = "Views = \(String(productRank.view_count!))"
+        cell.countLabel.text = "Count = \(String(productRank.view_count!))"
         let productName = DatabaseManager.sharedInstance.getProductName(with: productRank.id)
         cell.nameLabel.text  = "Name = \(productName)"
         return cell

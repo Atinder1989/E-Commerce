@@ -18,9 +18,6 @@ class CategoryViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         CategoryViewModel.sharedInstance.fetchProductsList()
-        
-        
-        
         CategoryViewModel.sharedInstance.reloadData = {
             DispatchQueue.main.async {
                 self.tableviewCategory.reloadData()

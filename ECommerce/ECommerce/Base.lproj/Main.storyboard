@@ -411,7 +411,7 @@
             </objects>
             <point key="canvasLocation" x="-1143" y="107"/>
         </scene>
-        <!--Ranking List-->
+        <!--Ranking-->
         <scene sceneID="vJ1-Pv-q3P">
             <objects>
                 <viewController storyboardIdentifier="RankingViewController" id="Bwc-Hm-b1C" customClass="RankingViewController" customModule="ECommerce" customModuleProvider="target" sceneMemberID="viewController">
@@ -447,7 +447,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o6M-HS-G5Z"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Ranking List" id="NYa-Je-SBT"/>
+                    <navigationItem key="navigationItem" title="Ranking" id="NYa-Je-SBT"/>
                     <connections>
                         <outlet property="tableviewRanking" destination="LtN-gd-3p7" id="iif-Nn-VsO"/>
                     </connections>
